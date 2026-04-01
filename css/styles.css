@@ -368,21 +368,3 @@ Responsive Styles
         min-width: 138px;
     }
 }
-
-/* ===============
-iOS Safari Fixes
-================ */
-
-/* Fix iOS default input styling */
-input, select, textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border-radius: 0;
-}
-
-/* Fix label font-size conflict */
-/* label {
-    font-size: 14px !important;
-    line-height: 1.4;
-} */
