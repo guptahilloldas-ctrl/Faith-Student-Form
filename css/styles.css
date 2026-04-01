@@ -351,7 +351,78 @@ Responsive Styles
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
+
+    /* Header */
+    .header-top img {
+        max-width: 70px;
+    }
+
+    .header-inputs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* ✅ THIS IS THE CORE FIX:
+       Break the flex row so label sits ABOVE the input */
+    .col-12.d-flex.align-items-center {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    /* ✅ Make labels full width and remove fixed min-width */
+    .form-label-fixed,
+    .form-label-secondary {
+        min-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 6px 0.5rem !important;
+        font-size: 13px !important;
+        margin-bottom: 2px !important;
+    }
+
+    /* ✅ Make inputs full width */
+    .col-12.d-flex.align-items-center .form-control,
+    .col-12.d-flex.align-items-center .input-group {
+        width: 100% !important;
+        font-size: 16px !important;
+    }
+
+    /* ✅ Fix header counselor/date row */
+    .col-lg-8.d-flex.align-items-center,
+    .col-lg-4.d-flex.align-items-center {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    .col-lg-8 label,
+    .col-lg-4 label {
+        margin-bottom: 4px !important;
+    }
+
+    /* ✅ Fix iOS input rendering */
+    input, select, textarea {
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        border-radius: 0 !important;
+        font-size: 16px !important;
+    }
+
+    /* ✅ Table fix */
+    .table th,
+    .table td {
+        font-size: 12px !important;
+        min-width: 90px;
+        padding: 0.3rem !important;
+        white-space: nowrap;
+    }
+
+    .particulars-form {
+        min-width: 100% !important;
+    }
+}
+
+/* @media (max-width: 767px){
     label, thead, tr, th, td{
         font-size: 13px;
     }
@@ -367,27 +438,27 @@ Responsive Styles
     .particulars-form{
         min-width: 138px;
     }
-}
+} */
 
 /* ===============
 iOS Safari Fixes
 ================ */
 
 /* Fix iOS default input styling */
-input, select, textarea {
+/* input, select, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border-radius: 0;
-}
+} */
 
 /* Fix label font-size conflict */
-label {
+/* label {
     font-size: 14px !important;
     line-height: 1.4;
-}
+} */
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
 
     .header-top img {
         max-width: 70px;
@@ -398,7 +469,7 @@ label {
         gap: 10px;
     }
 
-    /* Fix overlapping label+input on iOS */
+    
     .form-label-fixed,
     .form-label-secondary {
         min-width: 100% !important;
@@ -408,20 +479,20 @@ label {
         font-size: 13px;
     }
 
-    /* Stack label and input vertically on small screens */
+    
     .d-flex.align-items-stretch,
     .d-flex.align-items-center {
         flex-direction: column !important;
     }
 
-    /* Ensure inputs take full width */
+    
     input, select, textarea {
         width: 100% !important;
-        font-size: 16px !important; /* Never go below 16px on iOS */
+        font-size: 16px !important; 
         min-height: 40px;
     }
 
-    /* Table font fix for iOS */
+    
     .table th,
     .table td {
         font-size: 12px !important;
@@ -433,4 +504,4 @@ label {
     .particulars-form {
         min-width: 138px;
     }
-}
+} */
