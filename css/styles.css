@@ -235,6 +235,25 @@ table input{
     table-layout: fixed;
 }
 
+/* Fix Safari mobile cell text overlap */
+.table th,
+.table td {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+@media (max-width: 768px) {
+    .table,
+    .table-responsive .table,
+    .table-responsive-custom .table {
+        table-layout: auto;
+    }
+}
+
 .bg-main{
     background: var(--color-main) !important;
     color: var(--color-white) !important;
